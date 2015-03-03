@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pais</h1>
 
-<table>
+<h1>Lista Paises</h1>
+
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -16,9 +17,9 @@
       <tr>
         <td><%= pai.nombre %></td>
         <td><%= pai.descripcion %></td>
-        <td><%= link_to 'Show', pai %></td>
-        <td><%= link_to 'Edit', edit_pai_path(pai) %></td>
-        <td><%= link_to 'Destroy', pai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><i><%= link_to '', pai,class: 'fa fa-folder-open' %></i></td>
+        <td><i><%= link_to '', edit_pai_path(pai),class: 'fa fa-pencil-square-o' %></i></td>
+        <td><i><%= link_to '', pai, method: :delete, data: { confirm: 'Are you sure?' },class: 'fa fa-trash'%></i></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Pai', new_pai_path %>
+<%= link_to 'Nuevo Pais', new_pai_path,:class => 'btn btn-primary' %>

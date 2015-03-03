@@ -1,4 +1,4 @@
-<%= form_for(@persona) do |f| %>
+<%= form_for(@persona,:html=>{:class=>'form-horizontal'}) do |f| %>
   <% if @persona.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
@@ -11,23 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :ci %><br>
-    <%= f.number_field :ci %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_nac %><br>
-    <%= f.date_select :fecha_nac %>
-  </div>
-  <div class="field">
-    <%= f.label :pais_id %><br>
-    <%= f.number_field :pais_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+   <div class="form-group">
+        <%= f.label :nombre, class:'col-sm-2 control-label' %>
+     <div class="col-sm-10">
+       <p><%= f.text_field :nombre,class: 'form-control'%>
+     </div>
+   </div>
+   <div class="form-group">
+        <%= f.label :ci, class:'col-sm-2 control-label' %>
+     <div class="col-sm-10">
+       <%= f.number_field :ci,class: 'form-control' %>
+     </div>
+   </div>
+   <div class="form-group">
+       <%= f.label :fecha_nac, class:'col-sm-2 control-label' %>
+     <div class="col-sm-10">
+       <%= f.date_select :fecha_nac,class: 'form-control' %>
+     </div>
+   </div>
+
+   <div class="form-group">
+       <%= f.label :pais_id, class:'col-sm-2 control-label' %>
+     <div class="col-sm-10">
+       <%= f.collection_select :pais_id ,Pai.all,:id,:nombre,class: 'form-control' %>
+     </div>
+   </div>
+    <div class="form-group">
+      <div class="col-sm-2 control-label">
+      </div>
+      <div class="col-sm-10">
+        <%= f.submit 'crear persona',:class=>'btn btn-primary'%>
+      </div>
+    </div>
+
+
 <% end %>

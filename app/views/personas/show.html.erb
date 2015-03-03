@@ -1,24 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @persona.nombre %>
-</p>
 
-<p>
-  <strong>Ci:</strong>
-  <%= @persona.ci %>
-</p>
+<div class="col-md-12">
+  <div class="row">
+  <div class="col-md-3"><strong>Nombre Completo</strong></div>
+  <div class="col-md-9"><%= @persona.nombre %></div>
+  </div>
+  <div class="row">
+  <div class="col-md-3"><strong>Carnet de Identidad</strong></div>
+  <div class="col-md-9"><%= @persona.ci %></div>
+  </div>
+  <div class="row">
+  <div class="col-md-3"><strong>fecha de naciemiento</strong></div>
+  <div class="col-md-9"><%=@persona.fecha_nac%> </div>
+  </div>
+</div>
 
-<p>
-  <strong>Fecha nac:</strong>
-  <%= @persona.fecha_nac %>
-</p>
-
-<p>
-  <strong>Pais:</strong>
-  <%= @persona.pais_id %>
-</p>
-
-<%= link_to 'Edit', edit_persona_path(@persona) %> |
-<%= link_to 'Back', personas_path %>
+<%= link_to 'Editar', edit_persona_path(@persona) %>
+<%= link_to 'Volver', personas_path %>

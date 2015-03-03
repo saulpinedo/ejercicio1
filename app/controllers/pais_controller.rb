@@ -1,4 +1,5 @@
 class PaisController < ApplicationController
+  http_basic_authenticate_with name: "saul",password: "saul",except: [:index,:show]
   before_action :set_pai, only: [:show, :edit, :update, :destroy]
 
   # GET /pais

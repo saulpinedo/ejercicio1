@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Personas</h1>
+<h1>Lista de Personas</h1>
 
-<table>
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -20,9 +20,9 @@
         <td><%= persona.ci %></td>
         <td><%= persona.fecha_nac %></td>
         <td><%= persona.pais_id %></td>
-        <td><%= link_to 'Show', persona %></td>
-        <td><%= link_to 'Edit', edit_persona_path(persona) %></td>
-        <td><%= link_to 'Destroy', persona, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><i><%= link_to '', persona,class:'fa fa-folder-open' %></i></td>
+        <td><i><%= link_to '', edit_persona_path(persona),class: 'fa fa-pencil-square-o' %></i></td>
+        <td><i><%= link_to '', persona, method: :delete, data: { confirm: 'Are you sure?' },class:'fa fa-trash' %></i></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Persona', new_persona_path %>
+<%= link_to 'Nueva Persona' , new_persona_path, class:'btn btn-primary' %>

@@ -1,6 +1,11 @@
 class PersonasController < ApplicationController
+  http_basic_authenticate_with name: "saul", password: "saul", except: [:index, :show]
+  http_basic_authenticate_with name: "saul", password: "saul", only: :destroy
   before_action :set_persona, only: [:show, :edit, :update, :destroy]
 
+  def inicio
+    
+  end
   # GET /personas
   # GET /personas.json
   def index

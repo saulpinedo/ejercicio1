@@ -5,10 +5,31 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
 
+        <%=link_to "Ejercicio 1",root_path,:class=>'navbar-brand' %></li>
+      </div>
+      <nav>
+          <ul class="nav navbar-nav text-center">
+            <li><%=link_to "persona",personas_path%></li>
+            <li><%=link_to "pais",pais_path %></li>
+            <li><%=link_to "ciudad",ciudads_path %></li>
+            <li><%=link_to "empleado",empleados_path%></li>
+            <li><%=link_to "Inicio",root_path %></li>
+          </ul>
+      </nav>
+    </div>
+  </nav>
+
+
+  <div class="container">
+<%= yield %>
+  </div>
 </body>
 </html>
